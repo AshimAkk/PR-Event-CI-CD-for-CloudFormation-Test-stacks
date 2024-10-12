@@ -52,6 +52,7 @@ jobs:
 
 # second job cleaning up the PR after we are finished with it 
 # only runs when the pull event is merged 
+#test
 
   cleanup-on-merge:
     runs-on: ubuntu-latest
