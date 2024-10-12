@@ -21,7 +21,6 @@ Resources:
           Value: !Ref Environment
         
 
-
 #referencing the bucket created above
 
 Outputs:
