@@ -5,7 +5,7 @@ Parameters:
   Environment: 
     Type: String
     Default: test
-    AllowValues:
+    AllowedValues:
     - test 
     - staging 
     - production
@@ -13,14 +13,14 @@ Parameters:
 
 Resources:
   MyS3Bucket:
-    Type: 'AWS::s3::Bucket'
+    Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
     Tags:
-      - ey: Environment 
+      - Key: Environment 
         Value: !Ref Environment
-      - key: Environment
-        Value: GithubActionsTesting
+      - Key: Environment
+        Value: testingGitHubActions
 
 
 #referencing the bucket created above

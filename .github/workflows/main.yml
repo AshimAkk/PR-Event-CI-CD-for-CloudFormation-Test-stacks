@@ -34,15 +34,15 @@ jobs:
       - name: Deploy our stack 
         run: |
           stack_name="pr-test-stack-${{github.event.pull_request.number}}"
-          aws cloudformation create-stack --stack-name $stack_name --template-body file://cloudformation/s3-bucket.yml --parameters ParameterKey= Environment, ParameterValue=test
+          aws cloudformation create-stack --stack-name $stack_name --template-body file://cloudformation/s3-bucket.yml --parameters ParameterKey=Environment, ParameterValue=test
 
 # use github API to create a comment on the pull request, and its going to print a message for the body to show us what the name of our stack is and its been deployed
       - name: Comment on the Pull request
         uses: actions/github-script@v6
         with: 
-          github-token: ${{secret.GITHUB_TOKEN}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.rest.issues.CreateCommit ({
+            github.rest.issues.createComment ({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
