@@ -55,7 +55,7 @@ jobs:
 #test code is working 
 
   cleanup-on-merge:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     if: '${{github.event.pull_request.merged == true}}'
     steps:
       - name: Configure AWS Credentials
