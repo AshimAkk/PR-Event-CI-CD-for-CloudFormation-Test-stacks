@@ -52,11 +52,11 @@ jobs:
 
 # second job cleaning up the PR after we are finished with it 
 # only runs when the pull event is merged 
-#test
+#test code is working 
 
   cleanup-on-merge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
+    if: '${{github.event.pull_request.merged == true}}'
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
