@@ -19,6 +19,8 @@ Resources:
       Tags:
         - Key: Environment 
           Value: !Ref Environment
+        - Key: Environment 
+          Value: GitHubActions
 
 
 #Referencing the bucket created above
