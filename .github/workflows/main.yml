@@ -9,7 +9,7 @@ on:
 # sets permission for github token 
 # allows writing to pull requests and reading the pull request
 permissions:
-  pull_request: write
+  pull-requests: write
   contents: read
 
 
