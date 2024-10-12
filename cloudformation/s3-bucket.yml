@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: 's3 bucket for CI/CD Pull request'
+
+Parameters:
+  Environment: 
+    Type: String
+    Default: test
+    AllowValues:
+    - test 
+    - staging 
+    - production
+
+
+Resources:
+  MyS3Bucket:
+    Type: 'AWS::s3::Bucket'
+    Properties:
+      BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
+    Tags:
+      - key: Environment 
+        Value: !Ref Environment
+
+
+#referencing the bucket created above
+
+Outputs:
+  BucketName:
+    Description: "Name of created s3 bucket"
+    Value: !Ref MyS3Bucket
