@@ -1,4 +1,4 @@
-name: validate cloudformation of pull prequest 
+name: Validate cloudformation of pull prequest 
 
 on: 
   pull_request:
@@ -41,7 +41,7 @@ jobs:
         uses: actions/github-script@v6
         with: 
           github-token: ${{secret.GITHUB_TOKEN}}
-          scripts: |
+          script: |
             github.rest.issues.CreateCommit ({
             issue_number: context.issue.number,
             owner: context.repo.owner,
