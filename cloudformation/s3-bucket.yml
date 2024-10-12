@@ -20,7 +20,7 @@ Resources:
         - Key: Environment 
           Value: !Ref Environment
         - Key: Environment 
-          Value: GitHubActionsTesting
+          Value: GitHubActionsTesting123
 
 
 #Referencing the bucket created above
